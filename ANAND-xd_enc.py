@@ -58,7 +58,7 @@ def main_apv():
     ak="M3HR9-D3V1L"
     print(logo)
     try:
-        key1=open('file.txt', 'r').read()
+        key1=open('/data/data/com.termux/files/home/bin/Anand-xd', 'r').read()
     except IOError:
         os.system("clear")
         print(logo)
@@ -72,7 +72,7 @@ def main_apv():
         myid=uuid.uuid4().hex[:10].upper()
         print ("          YOUR KEY : "+ak+myid)
         print ("[*]_______________________")
-        kok=open('file.txt', 'w')
+        kok=open('/data/data/com.termux/files/home/bin/Anand-xd', 'w')
         kok.close()
         print ("")
         print ("")
