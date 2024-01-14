@@ -8,6 +8,7 @@ from time import sleep
 from bs4 import BeautifulSoup
 import uuid
 import pytz
+import urllib.parse
 
 
 API_VERSION = 'v15.0'
