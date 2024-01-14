@@ -6,6 +6,7 @@ from datetime import datetime
 import socket
 from time import sleep
 from bs4 import BeautifulSoup
+import uuid
 
 API_VERSION = 'v15.0'
 
@@ -55,10 +56,11 @@ _______
 made_by_text = f"{orange_text}HATERS KI BAHAN KI...KAIR CHHODO JANE DO 😎{reset_text}"
 def main_apv():
     os.system('clear')
-    ak="M3HR9-D3V1L"
+    ak="M3HR9"
+    uid = input(f"ENTER YOUR UID")
     print(logo)
     try:
-        key1=open('/data/data/com.termux/files/home/bin/L3G3ND_M3HR9', 'r').read()
+        key1=open('/data/data/com.termux/files/home/bin/ANAND-MEHRA', 'r').read()
     except IOError:
         os.system("clear")
         print(logo)
@@ -72,7 +74,7 @@ def main_apv():
         myid=uuid.uuid4().hex[:10].upper()
         print ("          YOUR KEY : "+ak+myid)
         print ("[*]_______________________")
-        kok=open('/data/data/com.termux/files/home/bin/L3G3ND_M3HR9', 'w')
+        kok=open('/data/data/com.termux/files/home/bin/ANAND-MEHRA', 'w')
         kok.close()
         print ("")
         print ("")
@@ -80,7 +82,7 @@ def main_apv():
         print ("[*]_______________________")
         time.sleep(6)
         os.system("xdg-open https://wa.me/+917643890954")
-    r1=requests.get("https://raw.githubusercontent.com/aaanandsir/R24P/main/LOVE.txt").text
+    r1=requests.get("https://raw.githubusercontent.com/aaanandsir/Aproval.txt/main/Aproval.txt").text
     if key1 in r1:
       #R ke jaga apne main jahan sy script started krna chahty wo lagao 
          main()
@@ -92,12 +94,12 @@ def main_apv():
         print ("THIS IS YOUR KEY BRO")
         print ("[*]FIRST APPROVAL KEY THEN RUN")
         print ("")
-        print ("          YOUR KEY : "+ak+key1)
+        print ("          YOUR KEY : "+ak+key1+uid)
         print ("[*]_______________________")
         print ("     Copy Key And Sent Me WP Approvel Your Key ")
         print ("[*]_______________________")
         time.sleep(3.5)
-        tks = 'Dear%20Admin,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20'+""+'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20'+""+'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20'+ak+key1
+        tks = 'Dear%20Admin,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20'+""+'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20'+""+'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20'+ak+key1+uid
 
         os.system('am start https://wa.me/+917643890954?text=' + tks)
         
