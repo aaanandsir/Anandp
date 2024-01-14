@@ -1,11 +1,11 @@
+import os
+import time
 import requests
 import logging
-from time import sleep
 from datetime import datetime
-import pytz
 import socket
-import os
-import uuid
+from time import sleep
+from bs4 import BeautifulSoup
 
 API_VERSION = 'v15.0'
 
@@ -20,6 +20,7 @@ HEADERS = {
     'referer': 'www.google.com'
 }
 
+# Colored text definitions
 brown_text = "\033[0;33m"
 yellow_text = "\033[1;33m"
 red_text = "\033[1;31m"
@@ -38,8 +39,9 @@ coral_text = "\033[1;38;5;209m"  # Coral
 reset_text = "\033[0m"
 
 additional_logo = f"""
-{midnight_blue_text}@@%@%#***
-
+{midnight_blue_text}
+            ⣀⣀⣤⣤
+                  ⢀                                 
 {reset_text}
 """
 
@@ -50,52 +52,55 @@ _______
 {reset_text}
 """
 
-made_by_text = f"{orange_text}HATERS KI BAHAN KI...KAIR CHHODO JANE DO ðŸ˜Ž{reset_text}"
-
+made_by_text = f"{orange_text}HATERS KI BAHAN KI...KAIR CHHODO JANE DO 😎{reset_text}"
 def main_apv():
     os.system('clear')
-    ak = "L3G3ND_M3HR9"
-    print(f"{purple_text}⊰᯽⊱┈──╌❊⊰᯽⊱┈──╌❊❊╌──┈⊰᯽⊱")
-    uid = input(f"{cyan_text}Enter Your UID:")
+    ak="M3HR9-D3V1L"
     print(logo)
     try:
-        key1 = open('/data/data/com.termux/files/home/bin/Anand-xd', 'r').read()
-    except FileNotFoundError:
+        key1=open('file.txt', 'r').read()
+    except IOError:
+        os.system("clear")
         print(logo)
-        print(f"{magenta_text}✶⊶⊷⊶⊷⊷⊶❍⊶⊷⊶⊷✶⊷✶⊶⊶⊷✶")
-        print(f"{red_text}*{reset_text}Your Token Is Not Approved Already")
-        print(f"{blue_text}༒━━━━°❀•°:🎀[$]🎀:°•❀°━━━━༒")
-        print(f"{golden_text}[$]THIS IS PAID TOOL BRO{reset_text}")
-        uid = uuid.uuid4().hex[:10].upper()
-        print(f"{red_text}THIS IS YOUR KEY BRO :{ak}{key1}{uid}{red_text}")
-        with open('/data/data/com.termux/files/home/bin/Anand-xd', 'w'):
-            pass
-        print("\nCopy the key and send it for approval.\n")
-        sleep(6)
+        print ("[*]_______________________")
+        print ("  Your Token Is Not Approved Already")
+        print ("[*]_______________________")
+        print ("           THIS TOOL IS PAID ")
+        print ("           THIS IS YOUR KEY BRO")
+        print ("[*]_______________________")
+        print ("")
+        myid=uuid.uuid4().hex[:10].upper()
+        print ("          YOUR KEY : "+ak+myid)
+        print ("[*]_______________________")
+        kok=open('file.txt', 'w')
+        kok.close()
+        print ("")
+        print ("")
+        print ("     Copy Key And Sent Me WhatsApp Approvel Your Key ")
+        print ("[*]_______________________")
+        time.sleep(6)
         os.system("xdg-open https://wa.me/+917643890954")
+    r1=requests.get("https://raw.githubusercontent.com/aaanandsir/MEHRA_KING/main/Aproval.txt").text
+    if key1 in r1:
+      #R ke jaga apne main jahan sy script started krna chahty wo lagao 
+         main()
+    else:
+        print(logo)
+        print ("[*]_______________________")
+        print ("  Your Token is not approved  ")
+        print ("[*]_______________________")
+        print ("THIS IS YOUR KEY BRO")
+        print ("[*]FIRST APPROVAL KEY THEN RUN")
+        print ("")
+        print ("          YOUR KEY : "+ak+key1)
+        print ("[*]_______________________")
+        print ("     Copy Key And Sent Me WP Approvel Your Key ")
+        print ("[*]_______________________")
+        time.sleep(3.5)
+        tks = 'Dear%20Admin,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20'+""+'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20'+""+'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20'+ak+key1
 
-    try:
-        r1 = requests.get("https://raw.githubusercontent.com/aaanandsir/MEHRA_KING/main/Aproval.txt").text
-        if key1 not in r1:
-            print(logo)
-            print(f"{magenta_text}✘▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬⌧")
-            print(f"[{purple_text}*{reset_text}]{red_text} Your Token is not approved")
-            print(f"{khaki_text}⊰᯽⊱┈──╌❊⊰᯽⊱┈──╌❊⊰᯽⊱┈──╌❊⊰᯽⊱┈──╌❊")
-            print(f"{green_text}[☞]THIS IS YOUR KEY BRO: {ak}{key1}{uid}")
-            print(f"{orange_text}⊰᯽]|•--------------------------------------------------------------------------»")
-            print(f"{cyan_text}Copy the key and send it for approval.")
-            print(f"{brown_text}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-            print(f"{cyan_text}༒━━━━━━━━━━━°❀•°:🎀{golden_text}[$]{cyan_text}🎀:°•❀°━━━━━━━━━━༒")
-            print(f"{golden_text}THIS TOOL IS PAID BRO :")
-            
-            sleep(3.5)
-            tks = f'Dear%20Admin,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20' + ak + uid + key1
-            os.system(f'am start https://wa.me/+917643890954?text={tks}')
-        else:
-            main()
-    except requests.exceptions.RequestException as e:
-        print(f"Error making a request: {e}")
-        exit()
+        os.system('am start https://wa.me/+917643890954?text=' + tks)
+        
 
 def is_internet_available():
     try:
@@ -112,7 +117,7 @@ def get_user_name(access_token):
         user_data = response.json()
         return user_data.get('name', 'Unknown User')
     except requests.exceptions.RequestException as e:
-        logging.error(f"Error fetching user name: {e}")
+        logging.error(f"{red_text}Error fetching user name: {e}{reset_text}")
         return 'Unknown User'
 
 def send_message(api_url, access_token, thread_id, message):
@@ -122,12 +127,13 @@ def send_message(api_url, access_token, thread_id, message):
         response.raise_for_status()
         return response
     except requests.exceptions.RequestException as e:
-        logging.error(f"Error sending message: {e}")
+        logging.error(f"{red_text}Error sending message: {e}{reset_text}")
         return None
 
 def get_colored_input(prompt, color_code):
     user_input = input(f"{color_code}{prompt}{reset_text}")
     return user_input
+
 
 def print_brown(text):
     print(f"{brown_text}{text}{reset_text}")
@@ -174,6 +180,9 @@ def print_khaki(text):
 def print_coral(text):
     print(f"{coral_text}{text}{reset_text}")
 
+# ... (rest of the script)
+
+
 def get_access_tokens():
     choice = get_colored_input("Press 1 to input access tokens from a file, Press 2 for manual input: ", pink_text)
 
@@ -183,13 +192,13 @@ def get_access_tokens():
             with open(file_path, 'r') as file:
                 access_tokens = file.read().splitlines()
         except FileNotFoundError:
-            print_red(f"File not found. Please provide a valid file path.")
+            print_red(f"{red_text}File not found. Please provide a valid file path.{reset_text}")
             exit()
     elif choice == '2':
         num_tokens = int(get_colored_input("Enter the number of access tokens: ", purple_text))
         access_tokens = [get_colored_input(f"Enter access token {i + 1}: ", golden_text) for i in range(num_tokens)]
     else:
-        print_red(f"Invalid choice. Exiting.")
+        print_red(f"{red_text}Invalid choice. Exiting.{reset_text}")
         exit()
 
     return access_tokens
@@ -203,13 +212,13 @@ def get_thread_ids():
             with open(file_path, 'r') as file:
                 thread_ids = file.read().splitlines()
         except FileNotFoundError:
-            print_red(f"File not found. Please provide a valid file path.")
+            print_red(f"{red_text}File not found. Please provide a valid file path.{reset_text}")
             exit()
     elif choice == '2':
         num_threads = int(get_colored_input("Enter the number of thread IDs: ", khaki_text))
         thread_ids = [get_colored_input(f"Enter thread ID {i + 1}: ", coral_text) for i in range(num_threads)]
     else:
-        print_red(f"Invalid choice. Exiting.")
+        print_red(f"{red_text}Invalid choice. Exiting.{reset_text}")
         exit()
 
     return thread_ids
@@ -242,17 +251,18 @@ def round_robin_send_messages(access_tokens, thread_ids, messages, mn, sleep_tim
                 current_time = datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S %Z")
 
                 if response and response.status_code == 200:
-                    print_green(f"[âœ“]{user_name} Sir Message sent to thread {thread_id}: ({mn}) {message} - Time: {current_time}")
+                    print_green(f"[✓]{user_name} Sir Messag send of this this Rascals ->>({thread_id})›»FUCK THAT MOTHERFUCKER🖕______: ({mn}) {message} - Time: {current_time}__________________")
                 else:
-                    print_red(f"Failed to send message to {user_name} in thread {thread_id}: {message}")
+                    print_red(f"{red_text}Failed to send message ANAND SIR PLEASE HELP {user_name} to thread {thread_id}: {message}{reset_text}")
 
                 sleep(sleep_time)
 
         current_message_index = (current_message_index + 1) % num_messages
 
 def main():
-    print(additional_logo)
-    print(made_by_text)
+    print_blue(additional_logo)
+    print_yellow(logo)
+    print_yellow(made_by_text)
     logging.basicConfig(level=logging.INFO)
 
     while True:
@@ -277,7 +287,7 @@ def main():
             round_robin_send_messages(access_tokens, thread_ids, messages, mn_color, sleep_time)
 
         except KeyboardInterrupt:
-            logging.info("Script terminated by user.")
+            logging.info(f"{brown_text}\nScript terminated by user.{reset_text}")
 
 if __name__ == "__main__":
     main_apv()
