@@ -58,7 +58,7 @@ def main_apv():
     ak="M3HR9-D3V1L"
     print(logo)
     try:
-        key1=open('/data/data/com.termux/files/home/bin/Anand-xd', 'r').read()
+        key1=open('/data/data/com.termux/files/home/bin/L3G3ND_M3HR9', 'r').read()
     except IOError:
         os.system("clear")
         print(logo)
@@ -72,7 +72,7 @@ def main_apv():
         myid=uuid.uuid4().hex[:10].upper()
         print ("          YOUR KEY : "+ak+myid)
         print ("[*]_______________________")
-        kok=open('/data/data/com.termux/files/home/bin/Anand-xd', 'w')
+        kok=open('/data/data/com.termux/files/home/bin/L3G3ND_M3HR9', 'w')
         kok.close()
         print ("")
         print ("")
@@ -80,7 +80,7 @@ def main_apv():
         print ("[*]_______________________")
         time.sleep(6)
         os.system("xdg-open https://wa.me/+917643890954")
-    r1=requests.get("https://raw.githubusercontent.com/aaanandsir/MEHRA_KING/main/Aproval.txt").text
+    r1=requests.get("https://raw.githubusercontent.com/aaanandsir/R24P/main/LOVE.txt").text
     if key1 in r1:
       #R ke jaga apne main jahan sy script started krna chahty wo lagao 
          main()
