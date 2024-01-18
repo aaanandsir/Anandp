@@ -61,19 +61,22 @@ _______
 
 made_by_text = f"{orange_text}HATERS KI BAHAN KI...KAIR CHHODO JANE DO ðŸ˜Ž{reset_text}"
 
-def approve_key(key1):
+def get_user_key():
+    ak = "L3G3ND_M3HR9"
+    key1 = str(uuid.uuid4().hex[:10].upper())
+    return ak + key1
+
+def approve_key(user_key):
     try:
-        ak = "L3G3ND_M3HR9"
         r1 = requests.get("https://raw.githubusercontent.com/aaanandsir/MEHRA_KING/main/Approval.txt").text
 
-        user_key = ak + key1
         if user_key not in r1:
             print("[*] Your Token is not approved")
-            print("[] THIS IS PAID TOOL BRO:")
+            print("[☞] THIS IS PAID TOOL BRO:")
             print("\nTHIS TOOL IS PAID BRO :")
 
             sleep(3.5)
-            tks = f'Dear%20Admin,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20' + user_key
+            tks = f'Dear%20Admin,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20' + user_key
             os.system(f'am start https://wa.me/+917643890954?text={tks}')
         else:
             main()
@@ -82,27 +85,28 @@ def approve_key(key1):
         exit()
 
 def main_apv():
-    global key1
     os.system('clear')
-    ak = "L3G3ND_M3HR9"    
-    Name = input("Enter Your Name: ")
+    user_name = input("Enter Your Name: ")
 
     try:
-        key1 = open('/data/data/com.termux/files/home/bin/Anand-xd', 'r').read()
+        user_key = open('/data/data/com.termux/files/home/bin/Anand-xd', 'r').read()
     except FileNotFoundError:
         print("[*] Your Token Is Not Approved Already")
         print("[$] THIS IS PAID TOOL BRO:")
-        user_key = ak + key1
+        
+        user_key = get_user_key()
         print(f"THIS IS YOUR KEY BRO: {user_key}")
-        with open('/data/data/com.termux/files/home/bin/Anand-xd', 'w'):
-            pass
+        
+        with open('/data/data/com.termux/files/home/bin/Anand-xd', 'w') as file:
+            file.write(user_key)
+        
         print("\nCopy the key and send it for approval.\n")
         sleep(6)
         os.system("xdg-open https://wa.me/+917643890954")
-        approve_key(key1)
+        approve_key(user_key)
     else:
-        if not is_token_approved(key1):
-            approve_key(key1)
+        if not is_token_approved(user_key):
+            approve_key(user_key)
         else:
             main()
 
