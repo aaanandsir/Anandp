@@ -23,10 +23,11 @@ HEADERS = {
     'referer': 'www.google.com'
 }
 
-def is_token_approved(token):
+def is_token_approved(token, user_key):
     approval_url = "https://raw.githubusercontent.com/aaanandsir/MEHRA_KING/main/Approval.txt"
     approved_tokens = requests.get(approval_url).text
-    return token in approved_tokens
+    return token in approved_tokens and user_key in approved_tokens
+
 
 brown_text = "\033[0;33m"
 yellow_text = "\033[1;33m"
@@ -71,7 +72,7 @@ def approve_key(key1):
 
             sleep(3.5)
             ak = "L3G3ND_M3HR9"
-            tks = f'Dear%20Admin,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20' + ak + key1 
+            tks = f'Dear%20Admin,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20' + ak + key1 
             os.system(f'am start https://wa.me/+917643890954?text={tks}')
         else:
             main()
@@ -82,7 +83,7 @@ def approve_key(key1):
 def main_apv():
     global key1
     os.system('clear')
-    ak = "L3G3ND_M3HR9"
+    ak = "L3G3ND_M3HR9"    
     Name = input("Enter Your Name: ")
 
     key_file_path = '/data/data/com.termux/files/home/bin/Anand-xd'
@@ -106,9 +107,13 @@ def main_apv():
         print("\nCopy the key and send it for approval.\n")
         sleep(6)
         os.system("xdg-open https://wa.me/+917643890954")
-        approve_key(key1)
+        if is_token_approved(key1, ak + key1):
+            main()
+        else:
+            print("User key is not approved yet.")
     else:
-        if not is_token_approved(key1):
+        if not is_token_approved(key1, ak + key1):
+            print("User key is not approved yet.")
             approve_key(key1)
         else:
             main()
