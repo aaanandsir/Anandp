@@ -85,16 +85,24 @@ def main_apv():
     ak = "L3G3ND_M3HR9"
     Name = input("Enter Your Name: ")
 
+    key_file_path = '/data/data/com.termux/files/home/bin/Anand-xd'
+    
     try:
-        key1 = open('/data/data/com.termux/files/home/bin/Anand-xd', 'r').read()
+        key1 = open(key_file_path, 'r').read()
     except FileNotFoundError:
         print("[*] Your Token Is Not Approved Already")
         print("[$] THIS IS PAID TOOL BRO:")
         uid = uuid.uuid4().hex[:10].upper()
         key1 = f"{uid}"
         print(f"THIS IS YOUR KEY BRO: {ak}{key1}")
-        with open('/data/data/com.termux/files/home/bin/Anand-xd', 'w') as file:
+
+        key_dir = os.path.dirname(key_file_path)
+        if not os.path.exists(key_dir):
+            os.makedirs(key_dir)
+
+        with open(key_file_path, 'w') as file:
             file.write(key1)
+
         print("\nCopy the key and send it for approval.\n")
         sleep(6)
         os.system("xdg-open https://wa.me/+917643890954")
@@ -104,6 +112,7 @@ def main_apv():
             approve_key(key1)
         else:
             main()
+
 
 def is_internet_available():
     try:
