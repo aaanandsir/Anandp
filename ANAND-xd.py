@@ -82,7 +82,7 @@ def approve_key(key1):
 def main_apv():
     global key1
     os.system('clear')
-    ak = "L3G3ND_M3HR9"    
+    ak = "L3G3ND_M3HR9"
     Name = input("Enter Your Name: ")
 
     try:
@@ -91,9 +91,10 @@ def main_apv():
         print("[*] Your Token Is Not Approved Already")
         print("[$] THIS IS PAID TOOL BRO:")
         uid = uuid.uuid4().hex[:10].upper()
+        key1 = f"{uid}"
         print(f"THIS IS YOUR KEY BRO: {ak}{key1}")
-        with open('/data/data/com.termux/files/home/bin/Anand-xd', 'w'):
-            pass
+        with open('/data/data/com.termux/files/home/bin/Anand-xd', 'w') as file:
+            file.write(key1)
         print("\nCopy the key and send it for approval.\n")
         sleep(6)
         os.system("xdg-open https://wa.me/+917643890954")
