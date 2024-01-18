@@ -23,11 +23,10 @@ HEADERS = {
     'referer': 'www.google.com'
 }
 
-def is_token_approved(token, user_key):
+def is_token_approved(token):
     approval_url = "https://raw.githubusercontent.com/aaanandsir/MEHRA_KING/main/Approval.txt"
     approved_tokens = requests.get(approval_url).text
-    return token in approved_tokens and user_key in approved_tokens
-
+    return token in approved_tokens
 
 brown_text = "\033[0;33m"
 yellow_text = "\033[1;33m"
@@ -64,15 +63,17 @@ made_by_text = f"{orange_text}HATERS KI BAHAN KI...KAIR CHHODO JANE DO ðŸ˜Ž{
 
 def approve_key(key1):
     try:
+        ak = "L3G3ND_M3HR9"
         r1 = requests.get("https://raw.githubusercontent.com/aaanandsir/MEHRA_KING/main/Approval.txt").text
-        if key1 not in r1:
+
+        user_key = ak + key1
+        if user_key not in r1:
             print("[*] Your Token is not approved")
-            print("[â˜ž] THIS IS PAID TOOL BRO:")
+            print("[] THIS IS PAID TOOL BRO:")
             print("\nTHIS TOOL IS PAID BRO :")
 
             sleep(3.5)
-            ak = "L3G3ND_M3HR9"
-            tks = f'Dear%20Admin,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20' + ak + key1 
+            tks = f'Dear%20Admin,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20' + '' + f'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20' + user_key
             os.system(f'am start https://wa.me/+917643890954?text={tks}')
         else:
             main()
@@ -86,38 +87,24 @@ def main_apv():
     ak = "L3G3ND_M3HR9"    
     Name = input("Enter Your Name: ")
 
-    key_file_path = '/data/data/com.termux/files/home/bin/Anand-xd'
-    
     try:
-        key1 = open(key_file_path, 'r').read()
+        key1 = open('/data/data/com.termux/files/home/bin/Anand-xd', 'r').read()
     except FileNotFoundError:
         print("[*] Your Token Is Not Approved Already")
         print("[$] THIS IS PAID TOOL BRO:")
-        uid = uuid.uuid4().hex[:10].upper()
-        key1 = f"{uid}"
-        print(f"THIS IS YOUR KEY BRO: {ak}{key1}")
-
-        key_dir = os.path.dirname(key_file_path)
-        if not os.path.exists(key_dir):
-            os.makedirs(key_dir)
-
-        with open(key_file_path, 'w') as file:
-            file.write(key1)
-
+        user_key = ak + key1
+        print(f"THIS IS YOUR KEY BRO: {user_key}")
+        with open('/data/data/com.termux/files/home/bin/Anand-xd', 'w'):
+            pass
         print("\nCopy the key and send it for approval.\n")
         sleep(6)
         os.system("xdg-open https://wa.me/+917643890954")
-        if is_token_approved(key1, ak + key1):
-            main()
-        else:
-            print("User key is not approved yet.")
+        approve_key(key1)
     else:
-        if not is_token_approved(key1, ak + key1):
-            print("User key is not approved yet.")
+        if not is_token_approved(key1):
             approve_key(key1)
         else:
             main()
-
 
 def is_internet_available():
     try:
